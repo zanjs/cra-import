@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 
-const importPromise = import('./ModuleA');
+const importPromises = {
+  moduleA: import('./ModuleA')
+};
 
 class App extends Component {
   handleClick = () => {
-      importPromise
+      importPromises.moduleA
       .then(({ moduleA }) => {
         // Use moduleA
         alert(moduleA);
